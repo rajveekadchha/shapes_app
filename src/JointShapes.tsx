@@ -52,7 +52,7 @@ export default function JointShapes(){
       // Create a new label text box below the shape
       const label = new joint.shapes.standard.TextBlock();
       label.position(position.x, position.y + height + 10); // Position below the shape
-      label.resize(200, 50); // Resize the label box
+      label.resize(150, 120); // Resize the label box
       label.attr({
         body: { fill: "lightgray" },
         label: { text: labelDetails, fill: "black", fontSize: 12 },
@@ -89,8 +89,8 @@ export default function JointShapes(){
     };
 
     // Create the shapes
-    createShape(joint.shapes.standard.Rectangle, 50, 50, "blue", "Click me!");
-    createShape(joint.shapes.standard.Circle, 250, 50, "pink", "Click me!");
+    createShape(joint.shapes.standard.Rectangle, 50, 50, "#C3B1E1", "Click me!");
+    createShape(joint.shapes.standard.Circle, 250, 50, "#FFB3BA", "Click me!");
 
     return () => {
       graph.clear();
