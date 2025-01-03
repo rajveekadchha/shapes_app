@@ -12,9 +12,9 @@ export default function JointShapes(){
     const paper = new joint.dia.Paper({
       el: paperRef.current,
       model: graph,
-      width: 1000,
-      height: 1000,
-      gridSize: 10,
+      width: "90vw",
+      height: "80vh",
+      background: { color: '#F5F5F5' },
       interactive: { labelMove: false }, // Prevent default label move
     });
 
@@ -29,6 +29,7 @@ export default function JointShapes(){
 
       const position = element.position();
       const { width, height } = element.size();
+      
       const fillColor = element.attr('body/fill');
       const labelText = element.attr('label/text');
 
@@ -37,8 +38,11 @@ export default function JointShapes(){
       // Check for circle
       if (element instanceof joint.shapes.standard.Circle) {
         const radius = element.size().width / 2; // Radius is half of width for circle
-        additionalText = `Radius: ${radius}px`;
-      } else {
+        additionalText = `Radius: ${radius}px, Shape: Circle`;
+       } else if (element instanceof joint.shapes.standard.Rectangle) {
+        additionalText = `Width: ${width}px, Height: ${height}px , Shape: Rectangle`;
+       } 
+      else {
         additionalText = `Width: ${width}px, Height: ${height}px`;
       }
 
@@ -85,8 +89,8 @@ export default function JointShapes(){
     };
 
     // Create the shapes
-    createShape(joint.shapes.standard.Rectangle, 50, 50, "blue", "Rectangle!");
-    createShape(joint.shapes.standard.Circle, 250, 50, "pink", "Circle!");
+    createShape(joint.shapes.standard.Rectangle, 50, 50, "blue", "Click me!");
+    createShape(joint.shapes.standard.Circle, 250, 50, "pink", "Click me!");
 
     return () => {
       graph.clear();
