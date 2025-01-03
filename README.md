@@ -1,6 +1,6 @@
 ## To preview
 
- [Visit here]([https://joinjsshapes.netlify.app/]).
+ Visit here [https://joinjsshapes.netlify.app/](https://joinjsshapes.netlify.app/).
 
  ### Dependencies 
 
